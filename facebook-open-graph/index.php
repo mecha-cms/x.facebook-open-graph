@@ -1,6 +1,6 @@
 <?php
 
-function fn_facebook_open_graph_replace($content) {
+function fn_facebook_open_graph($content) {
     if ($page = Lot::get('page')) {
         global $site, $url;
         $html  = '<!-- Begin Facebook Open Graph -->';
@@ -16,4 +16,4 @@ function fn_facebook_open_graph_replace($content) {
     return $content;
 }
 
-Hook::set('shield.output', 'fn_facebook_open_graph_replace', 1.9);
+Hook::set('shield.yield', 'fn_facebook_open_graph', 1.9);
