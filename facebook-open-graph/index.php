@@ -1,7 +1,7 @@
 <?php namespace fn;
 
 function facebook_open_graph($content) {
-    extract(\Lot::get());
+    extract(\Lot::get(), EXTR_SKIP);
     if (!empty($page)) {
         $out  = '<!-- Begin Facebook Open Graph -->';
         $out .= '<meta property="og:title" content="' . \To::text($site->trace) . '">';
