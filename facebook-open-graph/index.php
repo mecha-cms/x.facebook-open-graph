@@ -16,4 +16,4 @@ function facebook_open_graph($content) {
     return $content;
 }
 
-\Hook::set('shield.yield', __NAMESPACE__ . "\\facebook_open_graph", 1.9);
+\Hook::set('content', __NAMESPACE__ . "\\facebook_open_graph", 1.9);
