@@ -3,7 +3,7 @@ title: Facebook Open Graph
 description: Automatically insert [Facebook Open Graph](https://developers.facebook.com/docs/sharing/opengraph "Open Graph Stories") meta tags in the `<head>` section.
 author: Taufik Nurrohman
 type: Markdown
-version: 2.2.5
+version: 2.2.6
 
 use:
   '.\lot\x\layout': 1

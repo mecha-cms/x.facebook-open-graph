@@ -1,6 +1,6 @@
-<?php namespace _\lot\x;
+<?php namespace x;
 
-function facebook_open_graph($content) {
+function facebookOpenGraph($content) {
     extract($GLOBALS, \EXTR_SKIP);
     if (!empty($page)) {
         $out  = '<!-- Begin Facebook Open Graph -->';
@@ -18,4 +18,4 @@ function facebook_open_graph($content) {
     return $content;
 }
 
-\Hook::set('content', __NAMESPACE__ . "\\facebook_open_graph", 1.9);
+\Hook::set('content', __NAMESPACE__ . "\\facebookOpenGraph", 1.9);
