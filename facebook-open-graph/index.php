@@ -1,6 +1,6 @@
 <?php namespace x;
 
-function facebookOpenGraph($content) {
+function facebook_open_graph($content) {
     extract($GLOBALS, \EXTR_SKIP);
     if (!empty($page)) {
         $out  = '<!-- Begin Facebook Open Graph -->';
@@ -13,9 +13,9 @@ function facebookOpenGraph($content) {
         $out .= '<meta property="og:site_name" content="' . \w($site->title) . '">';
         $out .= '<meta property="og:type" content="' . ($site->is('page') ? 'article' : 'website') . '">';
         $out .= '<!-- End Facebook Open Graph -->';
-        return \str_replace('</head>', $out . '</head>', $content);
+        return \strtr($content, ['</head>' => $out . '</head>']);
     }
     return $content;
 }
 
-\Hook::set('content', __NAMESPACE__ . "\\facebookOpenGraph", 1.9);
+\Hook::set('content', __NAMESPACE__ . "\\facebook_open_graph", 1.9);
