@@ -1,7 +1,7 @@
 <?php namespace x;
 
 function facebook_open_graph($content) {
-    extract($GLOBALS, \EXTR_SKIP);
+    \extract($GLOBALS, \EXTR_SKIP);
     if (!empty($page)) {
         $out  = '<!-- Begin Facebook Open Graph -->';
         if ($description = \w($page->description ?? $site->description ?? "")) {
