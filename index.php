@@ -1,23 +1,23 @@
-<?php namespace x;
+<?php namespace x\facebook_open_graph;
 
-function facebook_open_graph($content) {
+function content($content) {
     \extract($GLOBALS, \EXTR_SKIP);
     if (!empty($page)) {
         $out  = '<!-- Begin Facebook Open Graph -->';
         if ($description = \w($page->description ?? $site->description ?? "")) {
-            $out .= '<meta property="og:description" content="' . $description . '">';
+            $out .= '<meta content="' . \eat($description) . '" property="og:description">';
         }
-        $out .= '<meta property="og:image" content="' . ($page->image ?? $url . '/favicon.ico') . '">';
-        $out .= '<meta property="og:site_name" content="' . \w($site->title) . '">';
+        $out .= '<meta content="' . \eat($page->image ?? $url . '/favicon.ico') . '" property="og:image">';
+        $out .= '<meta content="' . \w($site->title) . '" property="og:site_name">';
         if ($title = \w($page->title ?? $t ?? "")) {
-            $out .= '<meta property="og:title" content="' . $title . '">';
+            $out .= '<meta content="' . $title . '" property="og:title">';
         }
-        $out .= '<meta property="og:type" content="' . ($site->is('page') ? 'article' : 'website') . '">';
-        $out .= '<meta property="og:url" content="' . \r('&', '&amp;', $url->current) . '">';
+        $out .= '<meta content="' . ($site->is('page') ? 'article' : 'website') . '" property="og:type">';
+        $out .= '<meta content="' . \eat($url->current) . '" property="og:url">';
         $out .= '<!-- End Facebook Open Graph -->';
         return \strtr($content, ['</head>' => $out . '</head>']);
     }
     return $content;
 }
 
-\Hook::set('content', __NAMESPACE__ . "\\facebook_open_graph", 1.9);
+\Hook::set('content', __NAMESPACE__ . "\\content", 1.9);
