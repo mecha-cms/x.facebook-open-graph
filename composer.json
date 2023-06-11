@@ -1,5 +1,5 @@
 {
-  "description": "Automatically insert Facebook Open Graph meta tags in the `<head>` section.",
+  "description": "Automatically insert Facebook Open Graph meta tags into your `<head>` section.",
   "license": "GPL-3.0-or-later",
   "name": "mecha-cms/x.facebook-open-graph"
 }
