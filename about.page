@@ -5,7 +5,7 @@ icon: 'M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9
 color: '#1771e6'
 author: Taufik Nurrohman
 type: Markdown
-version: 3.0.0
+version: 3.0.1
 ...
 
 This extension adds Open Graph meta tags to the `<head>` section of your web page to provide the crawler with structured
